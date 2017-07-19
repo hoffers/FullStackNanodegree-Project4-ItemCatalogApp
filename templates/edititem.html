@@ -1,0 +1,35 @@
+{% extends "main.html" %}
+{% block content %}
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="list-title">Edit Item</h2>
+      <form action="{{ url_for('editItem',item_id=item.item_id)}}" method = 'post'>
+        <div class="form-group">
+          <label class="control-label" for="title">Title</label>
+          <input type="text" class="form-control" name="title" value="{{item.title}}" required="true">
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="description">Description</label>
+          <textarea class="form-control" rows="5" name="description" required="true">{{item.description}}</textarea>
+        </div>
+        <div class="form-group">
+          <label for="category">Cagegory</label>
+          <select class="form-control" name="category" required="true">
+            <option value=""></option>
+            {% for c in categories %}
+            <option value="{{c.cat_id}}" {% if item.cat_id==c.cat_id %}selected{% endif %}>{{c.name}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit" class="btn btn-success">Save</button>
+        <button type="reset" class="btn btn-primary">Reset</button>
+        <button type="button" class="btn btn-default" onclick="goBack()">Cancel</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    function goBack() {
+        window.history.back();
+    }
+  </script>
+{% endblock %}

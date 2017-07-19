@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+{% block content %}
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="list-title">Delete Item</h2>
+      <form action="{{ url_for('deleteItem',item_id=item.item_id)}}" method = 'post'>
+        <p>Are you sure you want to delete <b>{{item.title}}</b>?</p>
+        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+        <button type="button" class="btn btn-sm btn-default" onclick="goBack()">Cancel</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    function goBack() {
+        window.history.back();
+    }
+  </script>
+{% endblock %}

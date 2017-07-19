@@ -1,0 +1,94 @@
+body {
+  background-color: #ddd;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1000px;
+  }
+}
+
+.flash {
+  margin-top: 15px;
+}
+
+.header {
+  background-color: #091b43;
+  color: white;
+}
+
+.page-title {
+  color: white;
+}
+
+.page-title:hover,
+.page-title:focus {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header .container {
+  padding: 0;
+}
+
+.login-btn {
+  background-color: #eb3300;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 6px 28px;
+    color: white;
+}
+
+.login-btn a:hover,
+.login-btn:focus {
+  color: #333;
+  text-decoration: none;
+}
+
+.content {
+  background-color: white;
+  margin-top: 25px;
+  border: solid 2px #cacaca;
+}
+
+.left-col {
+  border-right: solid 3px #f3f3f3;
+}
+
+.list-title {
+  color: #091b43;
+  font-weight: bold;
+}
+
+.list-item {
+  color: #e92e06;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+a.list-item:hover,
+a.list-item:focus {
+  color: #a01f04;
+}
+
+.item-cat {
+  color: #a3abb4;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.line {
+  font-size: 19px;
+  vertical-align: middle;
+}
+
+#signInButton,
+.spinner-img {
+  margin-bottom: 15px;
+}
+
+.spinner-img {
+  height: 75px;
+}

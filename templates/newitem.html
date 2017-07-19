@@ -1,0 +1,34 @@
+{% extends "main.html" %}
+{% block content %}
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="list-title">Edit Item</h2>
+      <form action="{{ url_for('newItem')}}" method = 'post'>
+        <div class="form-group">
+          <label class="control-label" for="title">Title</label>
+          <input type="text" class="form-control" name="title" placeholder="e.g. Barbell" required="true">
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="description">Description</label>
+          <textarea class="form-control" rows="3" name="description" required="true" placeholder="e.g. Used as a weight in exercising. Comes in three colors."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="category">Cagegory</label>
+          <select class="form-control" name="category" required="true">
+            <option value="">-- Select a category --</option>
+            {% for c in categories %}
+            <option value="{{c.cat_id}}">{{c.name}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit" class="btn btn-success">Add</button>
+        <button type="button" class="btn btn-default" onclick="goBack()">Cancel</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    function goBack() {
+        window.history.back();
+    }
+  </script>
+{% endblock %}

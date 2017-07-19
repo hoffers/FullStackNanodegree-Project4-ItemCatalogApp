@@ -1,0 +1,35 @@
+{% extends "main.html" %}
+{% block content %}
+  <div class="row">
+    <div class="col-md-3 left-col">
+      <h2 class="list-title">Categories</h2>
+
+      {% for cat in categories %}
+
+      <div>
+
+        <p>
+          <a class="list-item" href='{{url_for('listCategoryItems',cat_id=cat.cat_id)}}' >{{cat.name}}</a>
+        </p>
+
+      </div>
+
+      {% endfor %}
+    </div>
+    <!-- <div class="col-md-1">
+    </div> -->
+    <div class="col-md-6">
+      <h2 class="list-title">{{category.name}} Items ({{items|length}} item{% if (items|length) !=1 %}s{% endif %})</h2>
+
+      {% for i in items %}
+
+      <div>
+        <p>
+          <a class="list-item" href="{{url_for('getItemDetails',item_id=i.item_id)}}">{{i.title}}</a>
+        </p>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
